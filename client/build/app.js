@@ -2,20 +2,54 @@
 var React = require('react');//React.jsのライブラリをimport
 var ReactDOM = require('react-dom');
 
-//コンポーネントを定義
-var Index = React.createClass({displayName: "Index",
-  render:function(){
+//ヘッダの定義
+var Header = React.createClass({displayName: "Header",
+  render: function(){
     return (
-        React.createElement("p", null, "first commit for gakusai")
+      React.createElement("h1", null, "ヘッダです")
     );
   }
 });
 
-//id='content'の要素にコンポーネント「Index」を挿入してレンダリング
+//ボディの定義
+var Body = React.createClass({displayName: "Body",
+  render: function(){
+    return (
+      React.createElement("h1", null, "ボディです")
+    );
+  }
+});
+
+//フッタの定義
+var Footer = React.createClass({displayName: "Footer",
+  render: function(){
+    return (
+      React.createElement("h1", null, "フッタです")
+    );
+  }
+});
+
+//コンポーネントを一つにまとめる
+var Index = React.createClass({displayName: "Index",
+  render:function(){
+    return (
+      React.createElement("div", null, 
+        React.createElement(Header, null), 
+        React.createElement("hr", null), 
+				React.createElement("div", {id: "main"}, 
+          React.createElement(Body, null)
+        ), 
+        React.createElement("hr", null), 
+        React.createElement(Footer, null)
+      )
+    );
+  }
+});
+
 ReactDOM.render(
   React.createElement(Index, null),
   document.getElementById('content')
-);
+);;
 
 },{"react":178,"react-dom":27}],2:[function(require,module,exports){
 (function (process){
