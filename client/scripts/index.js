@@ -1,32 +1,8 @@
 var React = require('react');//React.jsのライブラリをimport
 var ReactDOM = require('react-dom');
-
-//ヘッダの定義
-var Header = React.createClass({
-  render: function(){
-    return (
-      <h1>ヘッダです</h1>
-    );
-  }
-});
-
-//ボディの定義
-var Body = React.createClass({
-  render: function(){
-    return (
-      <h1>ボディです</h1>
-    );
-  }
-});
-
-//フッタの定義
-var Footer = React.createClass({
-  render: function(){
-    return (
-      <h1>フッタです</h1>
-    );
-  }
-});
+var Header = require('./views/Header.jsx');
+var Body = require('./views/Body.jsx');
+var Footer = require('./views/Footer.jsx');
 
 //コンポーネントを一つにまとめる
 var Index = React.createClass({
