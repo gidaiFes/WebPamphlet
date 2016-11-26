@@ -1,20 +1,18 @@
-var React = require('react');//React.jsのライブラリをimport
+var React = require('react');
 var ReactDOM = require('react-dom');
-var Header = require('./views/Header.jsx');
-var Body = require('./views/Body.jsx');
-var Footer = require('./views/Footer.jsx');
+var Header = require('./views/header.jsx');
+var Body = require('./views/body.jsx');
+var Footer = require('./views/footer.jsx');
 
-//コンポーネントを一つにまとめる
+//classNameでcssを指定
 var Index = React.createClass({
   render:function(){
     return (
       <div>
         <Header/>
-        <hr/>
-				<div id="main">
+        <div className="main">
           <Body/>
         </div>
-        <hr/>
         <Footer/>
       </div>
     );
@@ -24,4 +22,4 @@ var Index = React.createClass({
 ReactDOM.render(
   <Index />,
   document.getElementById('content')
-);;
+);

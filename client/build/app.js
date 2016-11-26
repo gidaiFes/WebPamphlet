@@ -1,21 +1,19 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var React = require('react');//React.jsのライブラリをimport
+var React = require('react');
 var ReactDOM = require('react-dom');
-var Header = require('./views/Header.jsx');
-var Body = require('./views/Body.jsx');
-var Footer = require('./views/Footer.jsx');
+var Header = require('./views/header.jsx');
+var Body = require('./views/body.jsx');
+var Footer = require('./views/footer.jsx');
 
-//コンポーネントを一つにまとめる
+//classNameでcssを指定
 var Index = React.createClass({displayName: "Index",
   render:function(){
     return (
       React.createElement("div", null, 
         React.createElement(Header, null), 
-        React.createElement("hr", null), 
-				React.createElement("div", {id: "main"}, 
+        React.createElement("div", {className: "main"}, 
           React.createElement(Body, null)
         ), 
-        React.createElement("hr", null), 
         React.createElement(Footer, null)
       )
     );
@@ -25,22 +23,132 @@ var Index = React.createClass({displayName: "Index",
 ReactDOM.render(
   React.createElement(Index, null),
   document.getElementById('content')
-);;
+);
 
-},{"./views/Body.jsx":2,"./views/Footer.jsx":3,"./views/Header.jsx":4,"react":181,"react-dom":30}],2:[function(require,module,exports){
-var React = require('react')
+},{"./views/body.jsx":2,"./views/footer.jsx":3,"./views/header.jsx":4,"react":181,"react-dom":30}],2:[function(require,module,exports){
+var React = require('react');
+var ReactDOM = require('react-dom');
 
+//ボディの定義
 var Body = React.createClass({displayName: "Body",
-	render: function(){
-		return(
-			React.createElement("h1", null, "this is body")
-		);
-	}
+  render: function(){
+    return (
+      React.createElement(UserBox, null)
+    );
+  }
+});
+
+//フォームとリストを一つにしたもの
+var UserBox = React.createClass({displayName: "UserBox",
+  getInitialState:function(){
+    return {userData:[]};
+  },
+  handleAddUser:function(name, mail){
+    var data = this.state.userData;
+    data.push({name: name, mail: mail});
+    this.setState({userData: data});
+  },
+  render:function(){
+    return(
+      React.createElement("div", {style: {width:"300px"}}, 
+        React.createElement(UserForm, {addUser: this.handleAddUser}), 
+        React.createElement("hr", null), 
+        React.createElement(UserList, {userData: this.state.userData})
+      )
+    );
+  }
+});
+
+//リスト一行分を表示するコンポーネントを定義
+var User = React.createClass({displayName: "User",
+  propTypes:{
+    name: React.PropTypes.string.isRequired,
+    mail: React.PropTypes.string
+  },
+  render:function(){
+    return (
+      React.createElement("tr", null, 
+        React.createElement("td", null, this.props.name), 
+        React.createElement("td", null, this.props.mail)
+      )
+    );
+  }
+});
+
+//リストそのものを表示するコンポーネントを定義
+var UserList = React.createClass({displayName: "UserList",
+  propTypes:{
+    userData:React.PropTypes.arrayOf(React.PropTypes.object).isRequired
+  },
+  render:function(){
+    var UserNodes = this.props.userData.map(function(user, index){
+      return (
+        React.createElement(User, {name: user.name, mail: user.mail, key: index})
+      );
+    });
+    return (
+      React.createElement("table", null, 
+        React.createElement("tbody", null, 
+          React.createElement("tr", null, 
+            React.createElement("th", null, "名前"), 
+            React.createElement("th", null, "メールアドレス")
+          ), 
+          UserNodes
+        )
+      )
+    );
+  }
+});
+
+//ユーザーの入力フォームを定義
+var UserForm = React.createClass({displayName: "UserForm",
+  propTypes:{
+    addUser:React.PropTypes.func.isRequired
+  },
+  handleSubmit:function(){
+    var name = ReactDOM.findDOMNode(this.refs.name).value.trim();
+    var mail = ReactDOM.findDOMNode(this.refs.mail).value.trim();
+    if (!name){
+      return;
+    }
+    this.props.addUser(name, mail);
+    ReactDOM.findDOMNode(this.refs.name).value = "";
+    ReactDOM.findDOMNode(this.refs.mail).value = "";
+  },
+  render:function(){
+    return (
+      React.createElement("div", null, 
+        React.createElement("table", null, 
+          React.createElement("tbody", null, 
+            React.createElement("tr", null, 
+              React.createElement("td", null, 
+                React.createElement("label", null, "名前")
+              ), 
+              React.createElement("td", null, 
+                React.createElement("input", {type: "text", ref: "name"})
+              )
+            ), 
+            React.createElement("tr", null, 
+              React.createElement("td", null, 
+                React.createElement("label", null, "メールアドレス")
+              ), 
+              React.createElement("td", null, 
+                React.createElement("input", {type: "text", ref: "mail"})
+              )
+            )
+          )
+        ), 
+        React.createElement("div", {style: {textAlign:"right"}}, 
+          React.createElement("button", {onClick: this.handleSubmit}, "追加")
+        )
+      )
+    );
+  }
 });
 
 module.exports = Body;
 
-},{"react":181}],3:[function(require,module,exports){
+},{"react":181,"react-dom":30}],3:[function(require,module,exports){
 var React = require('react')
 
 var Footer = React.createClass({displayName: "Footer",
