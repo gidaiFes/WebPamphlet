@@ -154,7 +154,10 @@ var React = require('react')
 var Footer = React.createClass({displayName: "Footer",
 	render: function(){
 		return(
-			React.createElement("h1", null, "this is footer")
+      React.createElement("footer", null, 
+				React.createElement("p", null, "©技大祭実行委員会 公式WEB SITE 2017"), 
+			  React.createElement("p", null, "〒940-2188 新潟県長岡市上富岡町 1603TEL:0258-47-9253 (学生係)  MAIL:nutfes.contact@gmail.com")
+			)
 		);
 	}
 })
