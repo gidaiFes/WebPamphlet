@@ -5,7 +5,7 @@ var Header = React.createClass({
 	render: function(){
 		return(
 			<div>
-			  <h1>this header</h1>
+        <h1>this header</h1>
 			  <Nav />
 			</div>
 		);
