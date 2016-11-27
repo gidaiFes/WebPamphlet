@@ -1,9 +1,13 @@
 var React = require('react');
+var Nav = require('./nav.jsx');
 
 var Header = React.createClass({
 	render: function(){
 		return(
-			<h1>this is header</h1>
+			<div>
+			  <h1>this header</h1>
+			  <Nav />
+			</div>
 		);
 	}
 });
