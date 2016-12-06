@@ -125,14 +125,16 @@ var TimeTable = React.createClass({
 				<table border="5" frame="box">
 					<tbody>
 						<tr>
-							<th>18</th>
+							<th><div className="container">
+				            <div className="button">  Center out</div>
+				          </div></th>
 							<th>18</th>
 							<th>18</th>
 							<th>18</th>
 						</tr>
 						<tr>
 							<th>18</th>
-							<td>test</td>
+							<td><button>button</button></td>
 							<td>test</td>
 							<td>test</td>
 						</tr>

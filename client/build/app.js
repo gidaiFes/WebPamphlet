@@ -152,14 +152,16 @@ var TimeTable = React.createClass({displayName: "TimeTable",
 				React.createElement("table", {border: "5", frame: "box"}, 
 					React.createElement("tbody", null, 
 						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
+							React.createElement("th", null, React.createElement("div", {className: "container"}, 
+				            React.createElement("div", {className: "button"}, "  Center out")
+				          )), 
 							React.createElement("th", null, "18"), 
 							React.createElement("th", null, "18"), 
 							React.createElement("th", null, "18")
 						), 
 						React.createElement("tr", null, 
 							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
+							React.createElement("td", null, React.createElement("button", null, "button")), 
 							React.createElement("td", null, "test"), 
 							React.createElement("td", null, "test")
 						), 
