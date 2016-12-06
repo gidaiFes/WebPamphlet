@@ -5,7 +5,7 @@ var ReactDOM = require('react-dom');
 var Body = React.createClass({
   render: function(){
     return (
-      <UserBox/>
+      <TimeTable/>
     );
   }
 });
@@ -116,6 +116,85 @@ var UserForm = React.createClass({
       </div>
     );
   }
+});
+
+var TimeTable = React.createClass({
+  render:function(){
+    return (
+      <div className="timetable">
+				<table border="5" frame="box">
+					<tbody>
+						<tr>
+							<th>18</th>
+							<th>18</th>
+							<th>18</th>
+							<th>18</th>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+						<tr>
+							<th>18</th>
+							<td>test</td>
+							<td>test</td>
+							<td>test</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		);
+	}
 });
 
 module.exports = Body;

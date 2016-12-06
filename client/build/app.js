@@ -5,7 +5,6 @@ var Header = require('./views/header.jsx');
 var Body = require('./views/body.jsx');
 var Footer = require('./views/footer.jsx');
 
-//classNameでcssを指定
 var Index = React.createClass({displayName: "Index",
   render:function(){
     return (
@@ -33,7 +32,7 @@ var ReactDOM = require('react-dom');
 var Body = React.createClass({displayName: "Body",
   render: function(){
     return (
-      React.createElement(UserBox, null)
+      React.createElement(TimeTable, null)
     );
   }
 });
@@ -144,6 +143,85 @@ var UserForm = React.createClass({displayName: "UserForm",
       )
     );
   }
+});
+
+var TimeTable = React.createClass({displayName: "TimeTable",
+  render:function(){
+    return (
+      React.createElement("div", {className: "timetable"}, 
+				React.createElement("table", {border: "5", frame: "box"}, 
+					React.createElement("tbody", null, 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("th", null, "18"), 
+							React.createElement("th", null, "18"), 
+							React.createElement("th", null, "18")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						), 
+						React.createElement("tr", null, 
+							React.createElement("th", null, "18"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test"), 
+							React.createElement("td", null, "test")
+						)
+					)
+				)
+			)
+		);
+	}
 });
 
 module.exports = Body;

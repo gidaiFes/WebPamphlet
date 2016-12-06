@@ -1,2 +1,15 @@
 .main {
   background: #F9F9F9; }
+
+.timetable table {
+  width: 100%; }
+  .timetable table tr {
+    background: #00FF00; }
+  .timetable table th {
+    width: 20%;
+    display: inline-block;
+    background: #00FF00; }
+  .timetable table td {
+    width: 20%;
+    display: inline-block;
+    background: #CBFFD3; }
