@@ -1,14 +1,15 @@
 var React = require('react');
+var Button = require('./button.jsx')
 
 var Nav = React.createClass({
 	render: function(){
 		return(
 			<nav>
 				<ul>
-          <li>TOP</li>
-          <li>about</li>
-				  <li>time table</li>
-          <li>sponsor</li>
+          <li><Button/></li>
+          <li><Button/></li>
+          <li><Button/></li>
+          <li><Button/></li>
 				</ul>
 			</nav>
 		);

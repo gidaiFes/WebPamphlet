@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Button = require('./button.jsx');
 
 //ボディの定義
 var Body = React.createClass({
@@ -118,13 +119,6 @@ var UserForm = React.createClass({
 });
 //buttonのコンポーネントを作る
 //タイムテーブルおみくじ
-var TimeButton = React.createClass({
-  render:function(){
-    return(
-      <div className="button">Center out</div>
-		);
-	}
-});
 
 var TimeTable = React.createClass({
   render:function(){
@@ -140,15 +134,15 @@ var TimeTable = React.createClass({
 						</tr>
 						<tr>
 							<th>18</th>
-							<td><TimeButton/></td>
-							<td><TimeButton/></td>
-							<td><TimeButton/></td>
+							<td><Button/></td>
+							<td><Button/></td>
+							<td><Button/></td>
 						</tr>
 						<tr>
 							<th>18</th>
-							<td><TimeButton/></td>
-							<td><TimeButton/></td>
-							<td><TimeButton/></td>
+							<td><Button/></td>
+							<td><Button/></td>
+							<td><Button/></td>
 						</tr>
 					</tbody>
 				</table>
