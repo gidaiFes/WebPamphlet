@@ -1,0 +1,33 @@
+nav
+  width: 90%
+  color: #FFF
+  width: 100%
+  border-collapse: collapse
+  border: 2px solid white
+  background: #A5F6FA
+  li
+    display: inline-block
+    justify-content: center
+    align-items: center
+    align-content: center
+    flex-wrap: wrap
+    width: 24%
+    .button
+      flex: 1 1 auto
+      text-align: center
+      text-transform: uppercase
+      position: relative
+      overflow: hidden
+      transition: .3s
+      &:hover
+        transform: scale(1.2)
+        background: #3FF9F9
+      &:after
+        position: absolute
+        content: ''
+        width: 0%
+        right: 0
+        left: auto
+        bottom: 0
+        height: 3px
+        background: #A5F6FA
