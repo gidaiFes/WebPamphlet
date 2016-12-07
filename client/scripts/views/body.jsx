@@ -118,6 +118,14 @@ var UserForm = React.createClass({
 });
 //buttonのコンポーネントを作る
 //タイムテーブルおみくじ
+var TimeButton = React.createClass({
+  render:function(){
+    return(
+      <div className="button">Center out</div>
+		);
+	}
+});
+
 var TimeTable = React.createClass({
   render:function(){
     return (
@@ -125,22 +133,22 @@ var TimeTable = React.createClass({
 				<table>
 					<tbody>
 						<tr>
-							<th><div className="button">  Center out</div></th>
+							<th>場所</th>
 							<th>体育館</th>
 							<th>メインステージ</th>
 							<th>マルチメディアセンター</th>
 						</tr>
 						<tr>
 							<th>18</th>
-							<td><div className="button">  Center out</div></td>
-							<td><div className="button">  Center out</div></td>
-							<td><div className="button">  Center out</div></td>
+							<td><TimeButton/></td>
+							<td><TimeButton/></td>
+							<td><TimeButton/></td>
 						</tr>
 						<tr>
 							<th>18</th>
-							<td><div className="button">  Center out</div></td>
-							<td><div className="button">  Center out</div></td>
-							<td><div className="button">  Center out</div></td>
+							<td><TimeButton/></td>
+							<td><TimeButton/></td>
+							<td><TimeButton/></td>
 						</tr>
 					</tbody>
 				</table>

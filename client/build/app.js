@@ -145,6 +145,14 @@ var UserForm = React.createClass({displayName: "UserForm",
 });
 //buttonのコンポーネントを作る
 //タイムテーブルおみくじ
+var TimeButton = React.createClass({displayName: "TimeButton",
+  render:function(){
+    return(
+      React.createElement("div", {className: "button"}, "Center out")
+		);
+	}
+});
+
 var TimeTable = React.createClass({displayName: "TimeTable",
   render:function(){
     return (
@@ -152,22 +160,22 @@ var TimeTable = React.createClass({displayName: "TimeTable",
 				React.createElement("table", null, 
 					React.createElement("tbody", null, 
 						React.createElement("tr", null, 
-							React.createElement("th", null, React.createElement("div", {className: "button"}, "  Center out")), 
+							React.createElement("th", null, "場所"), 
 							React.createElement("th", null, "体育館"), 
 							React.createElement("th", null, "メインステージ"), 
 							React.createElement("th", null, "マルチメディアセンター")
 						), 
 						React.createElement("tr", null, 
 							React.createElement("th", null, "18"), 
-							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
-							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
-							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out"))
+							React.createElement("td", null, React.createElement(TimeButton, null)), 
+							React.createElement("td", null, React.createElement(TimeButton, null)), 
+							React.createElement("td", null, React.createElement(TimeButton, null))
 						), 
 						React.createElement("tr", null, 
 							React.createElement("th", null, "18"), 
-							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
-							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
-							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out"))
+							React.createElement("td", null, React.createElement(TimeButton, null)), 
+							React.createElement("td", null, React.createElement(TimeButton, null)), 
+							React.createElement("td", null, React.createElement(TimeButton, null))
 						)
 					)
 				)
