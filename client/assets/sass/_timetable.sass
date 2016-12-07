@@ -1,13 +1,41 @@
 .timetable
+  width: 90%
   table
+    color: #FFF
     width: 100%
-    tr
-      background: #00FF00
+    border-collapse: collapse
+    border: 2px solid white
+    td
+      background: #A5F6FA
     th
-      width: 20%
+      background: #3FF9F9
+    td,th
       display: inline-block
-      background: #00FF00
-    td,button
-      width: 20%
+      justify-content: center
+      align-items: center
+      align-content: center
+      flex-wrap: wrap
       display: inline-block
-      background: #CBFFD3
+      width: 24%
+      border-style: solid
+      border-width: 1px
+      border-color: white
+      .button
+        flex: 1 1 auto
+        text-align: center
+        text-transform: uppercase
+        position: relative
+        overflow: hidden
+        transition: .3s
+        &:hover
+          transform: scale(1.2)
+          background: #3FF9F9
+        &:after
+          position: absolute
+          content: ''
+          width: 0%
+          right: 0
+          left: auto
+          bottom: 0
+          height: 3px
+          background: #A5F6FA

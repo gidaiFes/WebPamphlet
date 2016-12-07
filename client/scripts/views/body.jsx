@@ -6,8 +6,7 @@ var Body = React.createClass({
   render: function(){
     return (
       <TimeTable/>
-    );
-  }
+    ); }
 });
 
 //フォームとリストを一つにしたもの
@@ -117,74 +116,25 @@ var UserForm = React.createClass({
     );
   }
 });
-
+//buttonのコンポーネントを作る
+//タイムテーブルおみくじ
 var TimeTable = React.createClass({
   render:function(){
     return (
       <div className="timetable">
-				<table border="5" frame="box">
+				<table>
 					<tbody>
 						<tr>
-							<th><div className="container">
-				            <div className="button">  Center out</div>
-				          </div></th>
-							<th>18</th>
-							<th>18</th>
-							<th>18</th>
+							<th><div className="button">  Center out</div></th>
+							<th>体育館</th>
+							<th>メインステージ</th>
+							<th>マルチメディアセンター</th>
 						</tr>
 						<tr>
 							<th>18</th>
-							<td><button>button</button></td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
-						</tr>
-						<tr>
-							<th>18</th>
-							<td>test</td>
-							<td>test</td>
-							<td>test</td>
+							<td rowspan="2"><div className="button">  Center out</div></td>
+							<td><div className="button">  Center out</div></td>
+							<td><div className="button">  Center out</div></td>
 						</tr>
 						<tr>
 							<th>18</th>

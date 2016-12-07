@@ -33,8 +33,7 @@ var Body = React.createClass({displayName: "Body",
   render: function(){
     return (
       React.createElement(TimeTable, null)
-    );
-  }
+    ); }
 });
 
 //フォームとリストを一つにしたもの
@@ -144,74 +143,25 @@ var UserForm = React.createClass({displayName: "UserForm",
     );
   }
 });
-
+//buttonのコンポーネントを作る
+//タイムテーブルおみくじ
 var TimeTable = React.createClass({displayName: "TimeTable",
   render:function(){
     return (
       React.createElement("div", {className: "timetable"}, 
-				React.createElement("table", {border: "5", frame: "box"}, 
+				React.createElement("table", null, 
 					React.createElement("tbody", null, 
 						React.createElement("tr", null, 
-							React.createElement("th", null, React.createElement("div", {className: "container"}, 
-				            React.createElement("div", {className: "button"}, "  Center out")
-				          )), 
-							React.createElement("th", null, "18"), 
-							React.createElement("th", null, "18"), 
-							React.createElement("th", null, "18")
+							React.createElement("th", null, React.createElement("div", {className: "button"}, "  Center out")), 
+							React.createElement("th", null, "体育館"), 
+							React.createElement("th", null, "メインステージ"), 
+							React.createElement("th", null, "マルチメディアセンター")
 						), 
 						React.createElement("tr", null, 
 							React.createElement("th", null, "18"), 
-							React.createElement("td", null, React.createElement("button", null, "button")), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
-						), 
-						React.createElement("tr", null, 
-							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
+							React.createElement("td", {rowspan: "2"}, React.createElement("div", {className: "button"}, "  Center out")), 
+							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
+							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out"))
 						), 
 						React.createElement("tr", null, 
 							React.createElement("th", null, "18"), 
