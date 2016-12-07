@@ -159,15 +159,15 @@ var TimeTable = React.createClass({displayName: "TimeTable",
 						), 
 						React.createElement("tr", null, 
 							React.createElement("th", null, "18"), 
-							React.createElement("td", {rowspan: "2"}, React.createElement("div", {className: "button"}, "  Center out")), 
+							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
 							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
 							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out"))
 						), 
 						React.createElement("tr", null, 
 							React.createElement("th", null, "18"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test"), 
-							React.createElement("td", null, "test")
+							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
+							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out")), 
+							React.createElement("td", null, React.createElement("div", {className: "button"}, "  Center out"))
 						)
 					)
 				)
