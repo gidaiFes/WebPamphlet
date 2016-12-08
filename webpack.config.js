@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./src/components/index.js",
+  entry: "./src/index.jsx",
   output: {
     path: "./build",
     filename: "app.js"
