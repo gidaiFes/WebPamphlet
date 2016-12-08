@@ -38,6 +38,7 @@
   },
   "scripts": {
   "build": "webpack --config webpack.config.js",
-  "dev": "webpack-dev-server"
+  "dev": "webpack-dev-server",
+	"lint": "eslint src/**/*.jsx"
  }
 }
