@@ -1,7 +1,7 @@
-var React = require('react');
-var Button = require('./button.jsx')
+const React = require('react');
+const Button = require('./button.jsx')
 
-var Nav = React.createClass({
+const Nav = React.createClass({
 	render: function(){
 		return(
 			<nav>

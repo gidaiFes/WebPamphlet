@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 
-var Button = React.createClass({
+const Button = React.createClass({
   componentDidMount:function(){
     this.setState({push_flag: false});
   },

@@ -1,9 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Button = require('./button.jsx');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const Button = require('./button.jsx');
 
 //ボディの定義
-var Body = React.createClass({
+const Body = React.createClass({
   render: function(){
     return (
       <TimeTable/>
@@ -11,12 +11,12 @@ var Body = React.createClass({
 });
 
 //フォームとリストを一つにしたもの
-var UserBox = React.createClass({
+const UserBox = React.createClass({
   getInitialState:function(){
     return {userData:[]};
   },
   handleAddUser:function(name, mail){
-    var data = this.state.userData;
+    let data = this.state.userData;
     data.push({name: name, mail: mail});
     this.setState({userData: data});
   },
@@ -32,7 +32,7 @@ var UserBox = React.createClass({
 });
 
 //リスト一行分を表示するコンポーネントを定義
-var User = React.createClass({
+const User = React.createClass({
   propTypes:{
     name: React.PropTypes.string.isRequired,
     mail: React.PropTypes.string
@@ -48,12 +48,12 @@ var User = React.createClass({
 });
 
 //リストそのものを表示するコンポーネントを定義
-var UserList = React.createClass({
+const UserList = React.createClass({
   propTypes:{
     userData:React.PropTypes.arrayOf(React.PropTypes.object).isRequired
   },
   render:function(){
-    var UserNodes = this.props.userData.map(function(user, index){
+    let UserNodes = this.props.userData.map(function(user, index){
       return (
         <User name={user.name} mail={user.mail} key={index}/>
       );
@@ -73,13 +73,13 @@ var UserList = React.createClass({
 });
 
 //ユーザーの入力フォームを定義
-var UserForm = React.createClass({
+const UserForm = React.createClass({
   propTypes:{
     addUser:React.PropTypes.func.isRequired
   },
   handleSubmit:function(){
-    var name = ReactDOM.findDOMNode(this.refs.name).value.trim();
-    var mail = ReactDOM.findDOMNode(this.refs.mail).value.trim();
+    let name = ReactDOM.findDOMNode(this.refs.name).value.trim();
+    let mail = ReactDOM.findDOMNode(this.refs.mail).value.trim();
     if (!name){
       return;
     }
@@ -120,7 +120,7 @@ var UserForm = React.createClass({
 //buttonのコンポーネントを作る
 //タイムテーブルおみくじ
 
-var TimeTable = React.createClass({
+const TimeTable = React.createClass({
   render:function(){
     return (
       <div className="timetable">

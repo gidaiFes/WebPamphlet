@@ -1,7 +1,7 @@
-var React = require('react');
-var Nav = require('./nav.jsx');
+import React from 'react';
+import Nav from './nav.jsx';
 
-var Header = React.createClass({
+const Header = React.createClass({
 	render: function(){
 		return(
 			<div>

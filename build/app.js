@@ -54,15 +54,15 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _header = __webpack_require__(178);
+	var _header = __webpack_require__(369);
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _body = __webpack_require__(181);
+	var _body = __webpack_require__(370);
 
 	var _body2 = _interopRequireDefault(_body);
 
-	var _footer = __webpack_require__(182);
+	var _footer = __webpack_require__(372);
 
 	var _footer2 = _interopRequireDefault(_footer);
 
@@ -21505,426 +21505,11 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-	var Nav = __webpack_require__(179);
-
-	var Header = React.createClass({
-		displayName: 'Header',
-
-		render: function render() {
-			return React.createElement(
-				'div',
-				null,
-				React.createElement('img', { src: 'assets/img/gidai.png' }),
-				React.createElement(
-					'h1',
-					null,
-					'this header'
-				),
-				React.createElement(Nav, null)
-			);
-		}
-	});
-
-	module.exports = Header;
-
-/***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-	var Button = __webpack_require__(180);
-
-	var Nav = React.createClass({
-		displayName: 'Nav',
-
-		render: function render() {
-			return React.createElement(
-				'nav',
-				null,
-				React.createElement(
-					'ul',
-					null,
-					React.createElement(
-						'li',
-						null,
-						React.createElement(Button, null)
-					),
-					React.createElement(
-						'li',
-						null,
-						React.createElement(Button, null)
-					),
-					React.createElement(
-						'li',
-						null,
-						React.createElement(Button, null)
-					),
-					React.createElement(
-						'li',
-						null,
-						React.createElement(Button, null)
-					)
-				)
-			);
-		}
-	});
-
-	module.exports = Nav;
-
-/***/ },
-/* 180 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(32);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _MuiThemeProvider = __webpack_require__(183);
-
-	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
-
-	var _RaisedButton = __webpack_require__(332);
-
-	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Button = _react2.default.createClass({
-	  displayName: 'Button',
-
-	  componentDidMount: function componentDidMount() {
-	    this.setState({ push_flag: false });
-	  },
-	  changeFlag: function changeFlag() {
-	    this.state.push_flag = !this.state.push_flag;
-	    console.log("this is %s", this.state.push_flag);
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        _MuiThemeProvider2.default,
-	        null,
-	        _react2.default.createElement(_RaisedButton2.default, { label: 'Primary', primary: true, onClick: this.changeFlag })
-	      )
-	    );
-	  }
-	});
-
-	module.exports = Button;
-
-/***/ },
-/* 181 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(32);
-	var Button = __webpack_require__(180);
-
-	//ボディの定義
-	var Body = React.createClass({
-	  displayName: 'Body',
-
-	  render: function render() {
-	    return React.createElement(TimeTable, null);
-	  }
-	});
-
-	//フォームとリストを一つにしたもの
-	var UserBox = React.createClass({
-	  displayName: 'UserBox',
-
-	  getInitialState: function getInitialState() {
-	    return { userData: [] };
-	  },
-	  handleAddUser: function handleAddUser(name, mail) {
-	    var data = this.state.userData;
-	    data.push({ name: name, mail: mail });
-	    this.setState({ userData: data });
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { style: { width: "300px" } },
-	      React.createElement(UserForm, { addUser: this.handleAddUser }),
-	      React.createElement('hr', null),
-	      React.createElement(UserList, { userData: this.state.userData })
-	    );
-	  }
-	});
-
-	//リスト一行分を表示するコンポーネントを定義
-	var User = React.createClass({
-	  displayName: 'User',
-
-	  propTypes: {
-	    name: React.PropTypes.string.isRequired,
-	    mail: React.PropTypes.string
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'tr',
-	      null,
-	      React.createElement(
-	        'td',
-	        null,
-	        this.props.name
-	      ),
-	      React.createElement(
-	        'td',
-	        null,
-	        this.props.mail
-	      )
-	    );
-	  }
-	});
-
-	//リストそのものを表示するコンポーネントを定義
-	var UserList = React.createClass({
-	  displayName: 'UserList',
-
-	  propTypes: {
-	    userData: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
-	  },
-	  render: function render() {
-	    var UserNodes = this.props.userData.map(function (user, index) {
-	      return React.createElement(User, { name: user.name, mail: user.mail, key: index });
-	    });
-	    return React.createElement(
-	      'table',
-	      null,
-	      React.createElement(
-	        'tbody',
-	        null,
-	        React.createElement(
-	          'tr',
-	          null,
-	          React.createElement(
-	            'th',
-	            null,
-	            '\u540D\u524D'
-	          ),
-	          React.createElement(
-	            'th',
-	            null,
-	            '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9'
-	          )
-	        ),
-	        UserNodes
-	      )
-	    );
-	  }
-	});
-
-	//ユーザーの入力フォームを定義
-	var UserForm = React.createClass({
-	  displayName: 'UserForm',
-
-	  propTypes: {
-	    addUser: React.PropTypes.func.isRequired
-	  },
-	  handleSubmit: function handleSubmit() {
-	    var name = ReactDOM.findDOMNode(this.refs.name).value.trim();
-	    var mail = ReactDOM.findDOMNode(this.refs.mail).value.trim();
-	    if (!name) {
-	      return;
-	    }
-	    this.props.addUser(name, mail);
-	    ReactDOM.findDOMNode(this.refs.name).value = "";
-	    ReactDOM.findDOMNode(this.refs.mail).value = "";
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'table',
-	        null,
-	        React.createElement(
-	          'tbody',
-	          null,
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'label',
-	                null,
-	                '\u540D\u524D'
-	              )
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement('input', { type: 'text', ref: 'name' })
-	            )
-	          ),
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(
-	                'label',
-	                null,
-	                '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9'
-	              )
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement('input', { type: 'text', ref: 'mail' })
-	            )
-	          )
-	        )
-	      ),
-	      React.createElement(
-	        'div',
-	        { style: { textAlign: "right" } },
-	        React.createElement(
-	          'button',
-	          { onClick: this.handleSubmit },
-	          '\u8FFD\u52A0'
-	        )
-	      )
-	    );
-	  }
-	});
-	//buttonのコンポーネントを作る
-	//タイムテーブルおみくじ
-
-	var TimeTable = React.createClass({
-	  displayName: 'TimeTable',
-
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'timetable' },
-	      React.createElement(
-	        'table',
-	        null,
-	        React.createElement(
-	          'tbody',
-	          null,
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'th',
-	              null,
-	              '\u5834\u6240'
-	            ),
-	            React.createElement(
-	              'th',
-	              null,
-	              '\u4F53\u80B2\u9928'
-	            ),
-	            React.createElement(
-	              'th',
-	              null,
-	              '\u30E1\u30A4\u30F3\u30B9\u30C6\u30FC\u30B8'
-	            ),
-	            React.createElement(
-	              'th',
-	              null,
-	              '\u30DE\u30EB\u30C1\u30E1\u30C7\u30A3\u30A2\u30BB\u30F3\u30BF\u30FC'
-	            )
-	          ),
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'th',
-	              null,
-	              '18'
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(Button, null)
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(Button, null)
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(Button, null)
-	            )
-	          ),
-	          React.createElement(
-	            'tr',
-	            null,
-	            React.createElement(
-	              'th',
-	              null,
-	              '18'
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(Button, null)
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(Button, null)
-	            ),
-	            React.createElement(
-	              'td',
-	              null,
-	              React.createElement(Button, null)
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-	module.exports = Body;
-
-/***/ },
-/* 182 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-
-	var Footer = React.createClass({
-		displayName: 'Footer',
-
-		render: function render() {
-			return React.createElement('footer', null);
-		}
-	});
-
-	module.exports = Footer;
-
-/***/ },
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
 /* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -33727,6 +33312,437 @@
 	  zDepth: _react.PropTypes.oneOf([0, 1, 2, 3, 4, 5])
 
 	};
+
+/***/ },
+/* 369 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _nav = __webpack_require__(373);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Header = _react2.default.createClass({
+		displayName: 'Header',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement('img', { src: 'assets/img/gidai.png' }),
+				_react2.default.createElement(
+					'h1',
+					null,
+					'this header'
+				),
+				_react2.default.createElement(_nav2.default, null)
+			);
+		}
+	});
+
+	module.exports = Header;
+
+/***/ },
+/* 370 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(32);
+	var Button = __webpack_require__(371);
+
+	//ボディの定義
+	var Body = React.createClass({
+	  displayName: 'Body',
+
+	  render: function render() {
+	    return React.createElement(TimeTable, null);
+	  }
+	});
+
+	//フォームとリストを一つにしたもの
+	var UserBox = React.createClass({
+	  displayName: 'UserBox',
+
+	  getInitialState: function getInitialState() {
+	    return { userData: [] };
+	  },
+	  handleAddUser: function handleAddUser(name, mail) {
+	    var data = this.state.userData;
+	    data.push({ name: name, mail: mail });
+	    this.setState({ userData: data });
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { style: { width: "300px" } },
+	      React.createElement(UserForm, { addUser: this.handleAddUser }),
+	      React.createElement('hr', null),
+	      React.createElement(UserList, { userData: this.state.userData })
+	    );
+	  }
+	});
+
+	//リスト一行分を表示するコンポーネントを定義
+	var User = React.createClass({
+	  displayName: 'User',
+
+	  propTypes: {
+	    name: React.PropTypes.string.isRequired,
+	    mail: React.PropTypes.string
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'tr',
+	      null,
+	      React.createElement(
+	        'td',
+	        null,
+	        this.props.name
+	      ),
+	      React.createElement(
+	        'td',
+	        null,
+	        this.props.mail
+	      )
+	    );
+	  }
+	});
+
+	//リストそのものを表示するコンポーネントを定義
+	var UserList = React.createClass({
+	  displayName: 'UserList',
+
+	  propTypes: {
+	    userData: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
+	  },
+	  render: function render() {
+	    var UserNodes = this.props.userData.map(function (user, index) {
+	      return React.createElement(User, { name: user.name, mail: user.mail, key: index });
+	    });
+	    return React.createElement(
+	      'table',
+	      null,
+	      React.createElement(
+	        'tbody',
+	        null,
+	        React.createElement(
+	          'tr',
+	          null,
+	          React.createElement(
+	            'th',
+	            null,
+	            '\u540D\u524D'
+	          ),
+	          React.createElement(
+	            'th',
+	            null,
+	            '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9'
+	          )
+	        ),
+	        UserNodes
+	      )
+	    );
+	  }
+	});
+
+	//ユーザーの入力フォームを定義
+	var UserForm = React.createClass({
+	  displayName: 'UserForm',
+
+	  propTypes: {
+	    addUser: React.PropTypes.func.isRequired
+	  },
+	  handleSubmit: function handleSubmit() {
+	    var name = ReactDOM.findDOMNode(this.refs.name).value.trim();
+	    var mail = ReactDOM.findDOMNode(this.refs.mail).value.trim();
+	    if (!name) {
+	      return;
+	    }
+	    this.props.addUser(name, mail);
+	    ReactDOM.findDOMNode(this.refs.name).value = "";
+	    ReactDOM.findDOMNode(this.refs.mail).value = "";
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'table',
+	        null,
+	        React.createElement(
+	          'tbody',
+	          null,
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'label',
+	                null,
+	                '\u540D\u524D'
+	              )
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement('input', { type: 'text', ref: 'name' })
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(
+	                'label',
+	                null,
+	                '\u30E1\u30FC\u30EB\u30A2\u30C9\u30EC\u30B9'
+	              )
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement('input', { type: 'text', ref: 'mail' })
+	            )
+	          )
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { style: { textAlign: "right" } },
+	        React.createElement(
+	          'button',
+	          { onClick: this.handleSubmit },
+	          '\u8FFD\u52A0'
+	        )
+	      )
+	    );
+	  }
+	});
+	//buttonのコンポーネントを作る
+	//タイムテーブルおみくじ
+
+	var TimeTable = React.createClass({
+	  displayName: 'TimeTable',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'timetable' },
+	      React.createElement(
+	        'table',
+	        null,
+	        React.createElement(
+	          'tbody',
+	          null,
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'th',
+	              null,
+	              '\u5834\u6240'
+	            ),
+	            React.createElement(
+	              'th',
+	              null,
+	              '\u4F53\u80B2\u9928'
+	            ),
+	            React.createElement(
+	              'th',
+	              null,
+	              '\u30E1\u30A4\u30F3\u30B9\u30C6\u30FC\u30B8'
+	            ),
+	            React.createElement(
+	              'th',
+	              null,
+	              '\u30DE\u30EB\u30C1\u30E1\u30C7\u30A3\u30A2\u30BB\u30F3\u30BF\u30FC'
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'th',
+	              null,
+	              '18'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(Button, null)
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(Button, null)
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(Button, null)
+	            )
+	          ),
+	          React.createElement(
+	            'tr',
+	            null,
+	            React.createElement(
+	              'th',
+	              null,
+	              '18'
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(Button, null)
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(Button, null)
+	            ),
+	            React.createElement(
+	              'td',
+	              null,
+	              React.createElement(Button, null)
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Body;
+
+/***/ },
+/* 371 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(32);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _MuiThemeProvider = __webpack_require__(183);
+
+	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+
+	var _RaisedButton = __webpack_require__(332);
+
+	var _RaisedButton2 = _interopRequireDefault(_RaisedButton);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Button = _react2.default.createClass({
+	  displayName: 'Button',
+
+	  componentDidMount: function componentDidMount() {
+	    this.setState({ push_flag: false });
+	  },
+	  changeFlag: function changeFlag() {
+	    this.state.push_flag = !this.state.push_flag;
+	    console.log("this is %s", this.state.push_flag);
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        _MuiThemeProvider2.default,
+	        null,
+	        _react2.default.createElement(_RaisedButton2.default, { label: 'Primary', primary: true, onClick: this.changeFlag })
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Button;
+
+/***/ },
+/* 372 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Footer = _react2.default.createClass({
+		displayName: 'Footer',
+
+		render: function render() {
+			return _react2.default.createElement('footer', null);
+		}
+	});
+
+	module.exports = Footer;
+
+/***/ },
+/* 373 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Button = __webpack_require__(371);
+
+	var Nav = React.createClass({
+		displayName: 'Nav',
+
+		render: function render() {
+			return React.createElement(
+				'nav',
+				null,
+				React.createElement(
+					'ul',
+					null,
+					React.createElement(
+						'li',
+						null,
+						React.createElement(Button, null)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(Button, null)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(Button, null)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(Button, null)
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = Nav;
 
 /***/ }
 /******/ ]);
