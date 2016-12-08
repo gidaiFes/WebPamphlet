@@ -2,15 +2,22 @@ import React, { Component, PropTypes } from "react"
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as CounterActions from '../actions/counter.jsx';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Counter from '../Components/counter.jsx';
 
 class App extends Component {
+	static get childContextTypes() {
+    return { muiTheme: PropTypes.object.isRequired };
+  }
+  getChildContext(){
+    return {  muiTheme: getMuiTheme(MuiThemeProvider)};
+  }
   render() {
     const { value, actions } = this.props;
     return (
       <div>
-        <h2>count={value}</h2>
-        <button onClick={actions.increment}>増加</button>
-        <button onClick={actions.decrement}>減少</button>
+				<Counter value={value} actions={actions} />
       </div>
     )
   }
