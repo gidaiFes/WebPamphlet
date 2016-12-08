@@ -4,15 +4,17 @@ var ReactDOM = require('react-dom');
 // var Body = require('./views/body.jsx');
 // var Footer = require('./views/footer.jsx');
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+
 var Index = React.createClass({
   render:function(){
     return (
       <div>
-        // <Header/>
-        <div className="main">
-          // <Body/>
-        </div>
-        // <Footer/>
+        <h1>Hello, world</h1>
+        <MuiThemeProvider>
+          <RaisedButton label="Default" />
+        </MuiThemeProvider>
       </div>
     );
   }
