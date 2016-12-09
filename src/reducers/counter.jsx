@@ -9,8 +9,8 @@ export default function counter(state = initialState, action) {
     case 'INCREMENT':
       return { value: state.value + 1 }
     case 'DECREMENT':
-			if(state.value > 0){
-        return { value: state.value -1 }
+    if(state.value > 0){
+      return { value: state.value - 1 }
 			}else{
         return { value: state.value }
 			}
