@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from '../constants/ActionTypes.jsx'
+import { INCREMENT, DECREMENT } from '../constants/ActionTypes'
 
 const initialState = {
   value: 5

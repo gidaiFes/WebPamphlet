@@ -1,12 +1,13 @@
 import React, { Component, PropTypes } from "react"
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as CounterActions from '../actions/counter.jsx';
+import * as CounterActions from '../actions/counter';
+import Counter from '../Components/counter';
+import Header from '../Components/header';
+import Footer from '../Components/footer';
+
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Counter from '../Components/counter.jsx';
-import Header from '../Components/header.jsx';
-import Footer from '../Components/footer.jsx';
 
 class App extends Component {
 	static get childContextTypes() {

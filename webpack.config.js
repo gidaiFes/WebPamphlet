@@ -10,7 +10,7 @@ module.exports = {
       { test: /\.js$/,  loader: "eslint-loader", exclude: /node_modules/ }
     ]
   },
-	resolv: {
+	resolve: {
 		extensions: ['','.js','.jsx','.css']
 	},
   eslint: {

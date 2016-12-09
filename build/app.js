@@ -23545,14 +23545,6 @@
 
 	var CounterActions = _interopRequireWildcard(_counter);
 
-	var _getMuiTheme = __webpack_require__(221);
-
-	var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
-
-	var _MuiThemeProvider = __webpack_require__(352);
-
-	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
-
 	var _counter2 = __webpack_require__(369);
 
 	var _counter3 = _interopRequireDefault(_counter2);
@@ -23564,6 +23556,14 @@
 	var _footer = __webpack_require__(408);
 
 	var _footer2 = _interopRequireDefault(_footer);
+
+	var _getMuiTheme = __webpack_require__(221);
+
+	var _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);
+
+	var _MuiThemeProvider = __webpack_require__(352);
+
+	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
