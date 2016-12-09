@@ -6,12 +6,12 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.jsx?$/,  loader: "babel-loader", exclude: /node_modules/ },
+      { test: /\.jsx$/,  loader: "babel-loader", exclude: /node_modules/ },
       { test: /\.js$/,  loader: "eslint-loader", exclude: /node_modules/ }
     ]
   },
 	resolve: {
-		extensions: ['','.js','.jsx','.css']
+		extensions: ['','.jsx','.js','.css']
 	},
   eslint: {
     configFile: "./.eslintrc"
