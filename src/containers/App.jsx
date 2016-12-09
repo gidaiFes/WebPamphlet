@@ -5,6 +5,8 @@ import * as CounterActions from '../actions/counter.jsx';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Counter from '../Components/counter.jsx';
+import Header from '../Components/header.jsx';
+import Footer from '../Components/footer.jsx';
 
 class App extends Component {
 	static get childContextTypes() {
@@ -17,7 +19,9 @@ class App extends Component {
     const { value, actions } = this.props;
     return (
       <div>
+				<Header />
 				<Counter value={value} actions={actions} />
+				<Footer />
       </div>
     )
   }

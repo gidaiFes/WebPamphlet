@@ -62,7 +62,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _configureStore = __webpack_require__(407);
+	var _configureStore = __webpack_require__(409);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -23557,6 +23557,14 @@
 
 	var _counter3 = _interopRequireDefault(_counter2);
 
+	var _header = __webpack_require__(407);
+
+	var _header2 = _interopRequireDefault(_header);
+
+	var _footer = __webpack_require__(408);
+
+	var _footer2 = _interopRequireDefault(_footer);
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -23591,7 +23599,9 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_counter3.default, { value: value, actions: actions })
+	        _react2.default.createElement(_header2.default, null),
+	        _react2.default.createElement(_counter3.default, { value: value, actions: actions }),
+	        _react2.default.createElement(_footer2.default, null)
 	      );
 	    }
 	  }], [{
@@ -35520,6 +35530,54 @@
 /* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Header = _react2.default.createClass({
+		displayName: "Header",
+
+		render: function render() {
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement("img", { src: "./src/assets/img/gidai.png" })
+			);
+		}
+	});
+
+	module.exports = Header;
+
+/***/ },
+/* 408 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Footer = _react2.default.createClass({
+		displayName: 'Footer',
+
+		render: function render() {
+			return _react2.default.createElement('footer', null);
+		}
+	});
+
+	module.exports = Footer;
+
+/***/ },
+/* 409 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -35529,7 +35587,7 @@
 
 	var _redux = __webpack_require__(178);
 
-	var _index = __webpack_require__(408);
+	var _index = __webpack_require__(410);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -35541,7 +35599,7 @@
 	}
 
 /***/ },
-/* 408 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35552,7 +35610,7 @@
 
 	var _redux = __webpack_require__(178);
 
-	var _counter = __webpack_require__(409);
+	var _counter = __webpack_require__(411);
 
 	var _counter2 = _interopRequireDefault(_counter);
 
@@ -35565,7 +35623,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 409 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35578,7 +35636,7 @@
 	var _ActionTypes = __webpack_require__(220);
 
 	var initialState = {
-	  value: 0
+	  value: 5
 	};
 
 	function counter() {
@@ -35589,7 +35647,11 @@
 	    case 'INCREMENT':
 	      return { value: state.value + 1 };
 	    case 'DECREMENT':
-	      return { value: state.value - 1 };
+	      if (state.value > 0) {
+	        return { value: state.value - 1 };
+	      } else {
+	        return { value: state.value };
+	      }
 	    default:
 	      return state;
 	  }
