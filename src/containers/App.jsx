@@ -5,6 +5,7 @@ import * as CounterActions from '../actions/counter';
 import Counter from '../Components/counter';
 import Header from '../Components/header';
 import Footer from '../Components/footer';
+import TabWwipeable from '../Components/tab';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <div>
 				<Header />
+        <TabWwipeable  />
 				<Counter value={value} actions={actions} />
 				<Footer />
       </div>
