@@ -8,14 +8,14 @@ import Footer from '../Components/footer';
 import TabsSwipeable from '../Components/tab';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MyTheme from '../my-theme';
 
 class App extends Component {
 	static get childContextTypes() {
     return { muiTheme: PropTypes.object.isRequired };
   }
   getChildContext(){
-    return {  muiTheme: getMuiTheme(MuiThemeProvider)};
+    return {  muiTheme: getMuiTheme(MyTheme)};
   }
   render() {
     const { value, actions } = this.props;
