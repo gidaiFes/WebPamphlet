@@ -6,7 +6,6 @@ import Counter from '../Components/counter';
 import Header from '../Components/header';
 import Footer from '../Components/footer';
 import TabsSwipeable from '../Components/tab';
-import Planning from '../Components/planning';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MyTheme from '../my-theme';
@@ -24,7 +23,6 @@ class App extends Component {
       <div>
 				<Header />
         <TabsSwipeable />
-        <Planning />
 				<Counter value={value} actions={actions} />
 				<Footer />
       </div>

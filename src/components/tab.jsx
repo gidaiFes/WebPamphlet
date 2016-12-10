@@ -4,6 +4,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+import Planning from '../Components/planning';
 
 const styles = {
   headline: {
@@ -39,9 +40,10 @@ export default class TabsSwipeable extends React.Component {
           onChange={this.handleChange}
           value={this.state.slideIndex}
         >
-          <Tab label="Tab One" value={0} />
-          <Tab label="Tab Two" value={1} />
-          <Tab label="Tab Three" value={2} />
+          <Tab label="HOME" value={0} />
+          <Tab label="Time Table" value={1} />
+          <Tab label="temp1" value={2} />
+          <Tab label="temp2" value={3} />
         </Tabs>
         <SwipeableViews
           index={this.state.slideIndex}
@@ -52,10 +54,13 @@ export default class TabsSwipeable extends React.Component {
             Swipe to see the next slide.<br />
           </div>
           <div style={styles.slide}>
-            slide n2
+            <Planning />
           </div>
           <div style={styles.slide}>
-            slide n3
+            <Planning />
+          </div>
+          <div style={styles.slide}>
+            <Planning />
           </div>
         </SwipeableViews>
       </div>
