@@ -11,10 +11,10 @@ const styles = {
     fontSize: 24,
     paddingTop: 16,
     marginBottom: 12,
-    fontWeight: 400,
+    fontWeight: 400
   },
   slide: {
-    padding: 10,
+    padding: 10
   }
 };
 
@@ -23,13 +23,13 @@ export default class TabsSwipeable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      slideIndex: 0,
+      slideIndex: 0
     }
   }
 
   handleChange = (value) => {
     this.setState({
-      slideIndex: value,
+      slideIndex: value
     });
   };
 

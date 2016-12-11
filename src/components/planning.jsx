@@ -8,7 +8,7 @@ export default class Planning extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: false,
+      expanded: false
     };
   }
 
