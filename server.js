@@ -8,7 +8,7 @@ const bundler = webpack(webpackConfig);
 
 browserSync({
     server: {
-      baseDir: 'build',
+      baseDir: __dirname,
       middleware: [
         webpackDevMiddleware(bundler, {
           publicPath: webpackConfig.output.publicPath,
@@ -20,6 +20,6 @@ browserSync({
     },
 
     files: [
-			'build/index.html'
+			'index.html'
     ]
 });

@@ -4,7 +4,7 @@ const Header = React.createClass({
 	render: function(){
 		return(
 			<div>
-				<img src="./src/assets/img/gidai.png"/>
+				<img src="./src//assets/img/gidai.png"/>
 			</div>
 		);
 	}
