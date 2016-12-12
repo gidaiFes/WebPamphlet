@@ -1,7 +1,8 @@
 module.exports = {
   entry: "./src/index.jsx",
   output: {
-    path: "./build",
+    path: __dirname + "/build",
+		publicPath: '/',
     filename: "app.js"
   },
   module: {
