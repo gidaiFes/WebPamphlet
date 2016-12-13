@@ -1,69 +1,44 @@
 import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import Toggle from 'material-ui/Toggle';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import {tilesData} from '../constants/tilesData';
 
-export default class Planning extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      expanded: false
-    };
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around'
+  },
+  gridList: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+    overflowX: 'auto'
+  },
+  titleStyle: {
+    color: 'rgb(0, 188, 212)'
   }
+};
 
-  handleExpandChange = (expanded) => {
-    this.setState({expanded: expanded});
-  };
-
-  handleToggle = (event, toggle) => {
-    this.setState({expanded: toggle});
-  };
-
-  handleExpand = () => {
-    this.setState({expanded: true});
-  };
-
-  handleReduce = () => {
-    this.setState({expanded: false});
-  };
-
-  render() {
-    return (
-      <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
-        <CardHeader
-          title="URL Avatar"
-          subtitle="Subtitle"
-          avatar="src/assets/img/gidai.png"
-          actAsExpander={true}
-          showExpandableButton={true}
-        />
-        <CardText>
-          <Toggle
-            toggled={this.state.expanded}
-            onToggle={this.handleToggle}
-            labelPosition="right"
-            label="This toggle controls the expanded state of the component."
-          />
-        </CardText>
-        <CardMedia
-          expandable={true}
-          overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
+/**
+ * This example demonstrates the horizontal scrollable single-line grid list of images.
+ */
+const Planning = () => (
+  <div style={styles.root}>
+    <GridList style={styles.gridList} cols={2.2}>
+      {tilesData.map((tile) => (
+        <GridTile
+          key={tile.key}
+          title={tile.title}
+          actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+          titleStyle={styles.titleStyle}
+          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
-          <img src="src/assets/img/gidai.png" />
-        </CardMedia>
-        <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
-        <CardText expandable={true}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-        </CardText>
-        <CardActions>
-          <FlatButton label="Expand" onTouchTap={this.handleExpand} />
-          <FlatButton label="Reduce" onTouchTap={this.handleReduce} />
-        </CardActions>
-      </Card>
-    );
-  }
-}
+          <img src={tile.img} />
+        </GridTile>
+      ))}
+    </GridList>
+  </div>
+);
+
+export default Planning;
