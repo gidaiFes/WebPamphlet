@@ -32,7 +32,7 @@ const Planning = () => (
 				title={tile.title}
 				actionIcon={<IconButton><StarBorder color="#FFEB3B" /></IconButton>}
 				titleStyle={styles.titleStyle}
-				titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+				titleBackground="linear-gradient(to top, rgba(255,0,0,0.7) 0%,rgba(255,255,255,0.3) 70%,rgba(255,0,0,0) 100%)"
 			>
 				<img src={tile.img} />
 			</GridTile>
