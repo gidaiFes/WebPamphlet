@@ -5,6 +5,7 @@ import SwipeableViews from 'react-swipeable-views';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 import Planning from '../Components/planning';
+import PlanWrap from '../Components/planwrap';
 
 const styles = {
   headline: {
@@ -54,13 +55,11 @@ export default class TabsSwipeable extends React.Component {
             Swipe to see the next slide.<br />
           </div>
           <div style={styles.slide}>
-            <Planning />
+            <PlanWrap />
           </div>
           <div style={styles.slide}>
-            <Planning />
           </div>
           <div style={styles.slide}>
-            <Planning />
           </div>
         </SwipeableViews>
       </div>

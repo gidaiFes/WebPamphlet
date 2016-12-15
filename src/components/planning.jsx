@@ -11,14 +11,16 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around'
   },
-  gridList: {
-    display: 'flex',
-    flexWrap: 'nowrap',
-    overflowX: 'auto'
-  },
+	tileStyle: {
+	},
   titleStyle: {
-    color: 'rgb(255, 255, 255)'
-  }
+    color: 'rgb(255, 255, 255)',
+	},
+	tile: {
+		div: {
+			height: '100px'
+		}
+	}
 };
 
 /**
@@ -30,6 +32,7 @@ const Planning = () => (
 			<GridTile
 				key={tile.key}
 				title={tile.title}
+			  style={styles.tile}
 				actionIcon={<IconButton><StarBorder color="#FFEB3B" /></IconButton>}
 				titleStyle={styles.titleStyle}
 				titleBackground="linear-gradient(to top, rgba(255,0,0,0.7) 0%,rgba(255,255,255,0.3) 70%,rgba(255,0,0,0) 100%)"
