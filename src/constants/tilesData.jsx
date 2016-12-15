@@ -46,5 +46,29 @@ export const tilesData = [
     img: 'src/assets/img/gidai.png',
     title: 'Camera',
     author: 'Danson67'
+  },
+  {
+		key: '9',
+    img: 'src/assets/img/gidai.png',
+    title: 'Camera',
+    author: 'Danson67'
+  },
+  {
+		key: '10',
+    img: 'src/assets/img/gidai.png',
+    title: 'Camera',
+    author: 'Danson67'
+  },
+  {
+		key: '11',
+    img: 'src/assets/img/gidai.png',
+    title: 'Camera',
+    author: 'Danson67'
+  },
+  {
+		key: '12',
+    img: 'src/assets/img/gidai.png',
+    title: 'Camera',
+    author: 'Danson67'
   }
 ];
