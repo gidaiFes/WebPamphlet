@@ -16,7 +16,7 @@ const styles = {
     overflowX: 'auto'
   },
   titleStyle: {
-    color: 'rgb(0, 188, 212)'
+    color: 'rgb(255, 255, 255)'
   }
 };
 
@@ -30,7 +30,7 @@ const Planning = () => (
         <GridTile
           key={tile.key}
           title={tile.title}
-          actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+          actionIcon={<IconButton><StarBorder color="#FFEB3B" /></IconButton>}
           titleStyle={styles.titleStyle}
           titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
         >
