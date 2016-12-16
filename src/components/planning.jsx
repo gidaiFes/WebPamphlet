@@ -3,7 +3,7 @@ import {GridTile} from 'material-ui/GridList';
 import {Paper} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import {tilesData} from '../constants/tilesData';
+import {tilesData} from '../constants/eventsData';
 
 const styles = {
   root: {

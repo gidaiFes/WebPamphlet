@@ -4,12 +4,11 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-import Planning from '../Components/planning';
 import PlanWrap from '../Components/planwrap';
 
 const styles = {
   headline: {
-    fontSize: 24,
+    fontSize: 36,
     paddingTop: 16,
     marginBottom: 12,
     fontWeight: 400

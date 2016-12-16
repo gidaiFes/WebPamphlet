@@ -1,6 +1,6 @@
 import React from 'react';
 import PlanCard from '../Components/planCard';
-import {tilesData} from '../constants/tilesData';
+import {eventsData} from '../constants/eventsData';
 
 export default class PlanWrap extends React.Component {
 
@@ -26,9 +26,9 @@ export default class PlanWrap extends React.Component {
 		}
     return (
       <div style={styles.root}>
-				{tilesData.map((tile) => (
-					<div key={tile.key}>
-					  <PlanCard title={tile.title} subtitle={tile.subtitle}/>
+				{eventsData.map((eventFes) => (
+					<div key={eventFes.key}>
+					  <PlanCard title={eventFes.title} subtitle={eventFes.subtitle} text={eventFes.text}/>
 					</div>
 				))}
       </div>

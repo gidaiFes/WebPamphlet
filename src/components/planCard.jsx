@@ -68,13 +68,7 @@ constructor(props) {
 			  expandable={true}
 			  style={styles.text}
 			>
-				今年度目玉の新企画！
-				技大の謎を解き明かせ！？
-				今年から始まる新企画！
-				謎解きに自信がある人集まれ！
-				開催日時・場所
-				9/17(土)　10:00~15:00	案内所,他
-				9/18(日)　10:00~14:00	案内所,他
+				{this.props.text}
 			</CardText>
 		  </Card>
     );
