@@ -27,7 +27,9 @@ export default class PlanWrap extends React.Component {
     return (
       <div style={styles.root}>
 				{tilesData.map((tile) => (
-					<PlanCard />
+					<div key={tile.key}>
+					  <PlanCard title={tile.title} subtitle={tile.subtitle}/>
+					</div>
 				))}
       </div>
     );

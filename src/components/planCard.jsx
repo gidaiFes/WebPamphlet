@@ -4,8 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
 
 export default class planCard extends React.Component {
-
-  constructor(props) {
+constructor(props) {
     super(props);
     this.state = {
       expanded: false,
@@ -30,19 +29,33 @@ export default class planCard extends React.Component {
 
 
   render() {
- 	  const styles = {
+		const styles = {
 			card: {
 				display: 'block',
-				width: '40vw',
+				width: '300',
 				transitionDuration: '0.3s',
 				height: this.state.height
 			},
-    }
+			titleStyle: {
+				fontSize: '24'
+  		},
+			subtitleStyle: {
+				fontSize: '20'
+  		},
+			media: {
+  		},
+			text: {
+				fontSize: '20'
+  		}
+		}
     return (
       <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange} style={styles.card}>
         <CardHeader
-          title="リアル謎解き探索ゲーム"
-          subtitle="企画"
+          title={this.props.title}
+          subtitle={this.props.subtitle}
+
+			    titleStyle={styles.titleStyle}
+			    subtitleStyle={styles.subtitleStyle}
           actAsExpander={true}
           showExpandableButton={true}
         />
@@ -51,7 +64,10 @@ export default class planCard extends React.Component {
 			>
 				<img src="src/assets/img/gidai.png" />
 			</CardMedia>
-      <CardText expandable={true}>
+      <CardText
+			  expandable={true}
+			  style={styles.text}
+			>
 				今年度目玉の新企画！
 				技大の謎を解き明かせ！？
 				今年から始まる新企画！
@@ -60,10 +76,6 @@ export default class planCard extends React.Component {
 				9/17(土)　10:00~15:00	案内所,他
 				9/18(日)　10:00~14:00	案内所,他
 			</CardText>
-        <CardActions>
-          <FlatButton label="Expand" onTouchTap={this.handleExpand} />
-          <FlatButton label="Reduce" onTouchTap={this.handleReduce} />
-        </CardActions>
 		  </Card>
     );
   }
