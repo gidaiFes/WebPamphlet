@@ -32,20 +32,20 @@ constructor(props) {
 		const styles = {
 			card: {
 				display: 'block',
-				width: '300',
+				width: 300,
 				transitionDuration: '0.3s',
 				height: this.state.height
 			},
 			titleStyle: {
-				fontSize: '24'
+				fontSize: 24
   		},
 			subtitleStyle: {
-				fontSize: '20'
+				fontSize: 20
   		},
 			media: {
   		},
 			text: {
-				fontSize: '20'
+				fontSize: 20
   		}
 		}
     return (
