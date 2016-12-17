@@ -28,7 +28,7 @@ export default class PlanWrap extends React.Component {
       <div style={styles.root}>
 				{eventsData.map((eventFes) => (
 					<div key={eventFes.key}>
-					  <PlanCard title={eventFes.title} subtitle={eventFes.subtitle} text={eventFes.text}/>
+					  <PlanCard eventFes={eventFes} />
 					</div>
 				))}
       </div>

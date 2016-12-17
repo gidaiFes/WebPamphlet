@@ -3,6 +3,7 @@ export const eventsData = [
 		key: '1',
     img: 'src/assets/img/gidai.png',
     title: 'リアル謎解き探索ゲーム',
+    subtitle: '企画',
 		text: [
 			"学生による研究プレゼン大会",
 			"技大で行われている最先端の研究・技術を",

@@ -44,14 +44,14 @@ constructor(props) {
 			media: {
   		},
 			text: {
-				fontSize: 20
+				fontSize: 18
   		}
 		}
     return (
       <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange} style={styles.card}>
         <CardHeader
-          title={this.props.title}
-          subtitle={this.props.subtitle}
+          title={this.props.eventFes.title}
+          subtitle={this.props.eventFes.subtitle}
 			    titleStyle={styles.titleStyle}
 			    subtitleStyle={styles.subtitleStyle}
           actAsExpander={true}
@@ -60,12 +60,12 @@ constructor(props) {
 			<CardMedia
 			  style={styles.media}
 			>
-				<img src="src/assets/img/gidai.png" />
+				<img src={this.props.eventFes.img} />
 			</CardMedia>
       <CardText
 			  style={styles.text}
 			>
-				{this.props.text}
+				{this.props.eventFes.text}
 			</CardText>
 		  </Card>
     );
