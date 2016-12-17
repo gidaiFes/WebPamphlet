@@ -27,7 +27,6 @@ constructor(props) {
     this.setState({expanded: false});
   };
 
-
   render() {
 		const styles = {
 			card: {
@@ -53,7 +52,6 @@ constructor(props) {
         <CardHeader
           title={this.props.title}
           subtitle={this.props.subtitle}
-
 			    titleStyle={styles.titleStyle}
 			    subtitleStyle={styles.subtitleStyle}
           actAsExpander={true}
@@ -65,7 +63,6 @@ constructor(props) {
 				<img src="src/assets/img/gidai.png" />
 			</CardMedia>
       <CardText
-			  expandable={true}
 			  style={styles.text}
 			>
 				{this.props.text}
