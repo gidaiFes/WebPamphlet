@@ -36,11 +36,10 @@ export default class TimeTable extends React.Component {
 			    selectable={false}
 					displaySelectAll={false}
 				>
-					<TableRow
-			      style={{textAlign: 'center'}}>
-						<TableHeaderColumn style={{textAlign: 'center'}}>時間</TableHeaderColumn>
-						<TableHeaderColumn style={{textAlign: 'center'}}>1日目</TableHeaderColumn>
-						<TableHeaderColumn style={{textAlign: 'center'}}>2日目</TableHeaderColumn>
+					<TableRow>
+						<TableHeaderColumn>時間</TableHeaderColumn>
+						<TableHeaderColumn>1日目</TableHeaderColumn>
+						<TableHeaderColumn>2日目</TableHeaderColumn>
 					</TableRow>
 				</TableHeader>
 				<TableBody
@@ -51,8 +50,8 @@ export default class TimeTable extends React.Component {
 			 	  {timetableData.map((row) => (
 						<TableRow key={row.time}>
 							<TableRowColumn>{row.time}</TableRowColumn>
-							<TableRowColumn>{row.first}</TableRowColumn>
-							<TableRowColumn>{row.second}</TableRowColumn>
+							<TableRowColumn>{row.firstday}</TableRowColumn>
+							<TableRowColumn>{row.secondday}</TableRowColumn>
 						</TableRow>
 					))}
 				</TableBody>

@@ -1,13 +1,13 @@
 export const timetableData = [
   {
 		time: '10',
-    firstday: '',
-    secondday: ''
+    firstday: 'クイズ:',
+    secondday: 'カラオケ'
   },
   {
 		time: '11',
-    firstday: '',
-    secondday: ''
+    firstday: 'ライブ',
+    secondday: 'ライブ'
   },
   {
 		time: '12',
