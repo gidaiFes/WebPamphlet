@@ -1,0 +1,73 @@
+import React from 'react';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+
+const TimeTable = () => (
+  <Table
+	>
+    <TableHeader
+	    displaySelectAll={false}
+		>
+      <TableRow>
+        <TableHeaderColumn>時間</TableHeaderColumn>
+        <TableHeaderColumn>1日目</TableHeaderColumn>
+        <TableHeaderColumn>2日目</TableHeaderColumn>
+      </TableRow>
+    </TableHeader>
+    <TableBody
+      displayRowCheckbox={false}
+		>
+      <TableRow>
+        <TableRowColumn>10</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>11</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>12</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>13</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>14</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>15</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>16</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>17</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>18</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+      <TableRow>
+        <TableRowColumn>19</TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+        <TableRowColumn></TableRowColumn>
+      </TableRow>
+    </TableBody>
+  </Table>
+);
+
+export default TimeTable;

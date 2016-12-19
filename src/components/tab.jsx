@@ -5,6 +5,7 @@ import SwipeableViews from 'react-swipeable-views';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 import PlanWrap from '../Components/planwrap';
+import TimeTable from '../Components/timetable'
 
 const styles = {
   headline: {
@@ -41,8 +42,8 @@ export default class TabsSwipeable extends React.Component {
           value={this.state.slideIndex}
         >
           <Tab label="HOME" value={0} />
-          <Tab label="Time Table" value={1} />
-          <Tab label="temp1" value={2} />
+          <Tab label="Events" value={1} />
+          <Tab label="Time Table" value={2} />
           <Tab label="temp2" value={3} />
         </Tabs>
         <SwipeableViews
@@ -57,6 +58,7 @@ export default class TabsSwipeable extends React.Component {
             <PlanWrap />
           </div>
           <div style={styles.slide}>
+				    <TimeTable />
           </div>
           <div style={styles.slide}>
           </div>
