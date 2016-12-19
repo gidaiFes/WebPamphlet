@@ -1,19 +1,16 @@
 import React from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import RaisedButton from 'material-ui/RaisedButton';
+import AutoComplete from 'material-ui/AutoComplete';
+import MenuItem from 'material-ui/MenuItem';
 import {timetableData} from '../constants/timetableData';
+import {eventsData} from '../constants/eventsData';
 
-const styles = {
-  headline: {
-    fontSize: 36,
-    paddingTop: 16,
-    marginBottom: 12,
-    fontWeight: 400
-  },
-  slide: {
-    padding: 10
-  }
-};
+let sourceData = Array();
+eventsData.map((eventFes) => (
+  sourceData.push(eventFes.title)
+));
+
 export default class TimeTable extends React.Component {
 
   constructor(props) {
@@ -35,6 +32,7 @@ export default class TimeTable extends React.Component {
         <TableHeader
 			    selectable={false}
 					displaySelectAll={false}
+          adjustForCheckbox={false}
 				>
 					<TableRow>
 						<TableHeaderColumn>時間</TableHeaderColumn>
@@ -44,14 +42,25 @@ export default class TimeTable extends React.Component {
 				</TableHeader>
 				<TableBody
 			    selectable={false}
-          deselectOnClickaway={false}
 					displayRowCheckbox={false}
 				>
 			 	  {timetableData.map((row) => (
 						<TableRow key={row.time}>
 							<TableRowColumn>{row.time}</TableRowColumn>
-							<TableRowColumn>{row.firstday}</TableRowColumn>
-							<TableRowColumn>{row.secondday}</TableRowColumn>
+							<TableRowColumn>
+							  <AutoComplete
+									filter={AutoComplete.noFilter}
+									openOnFocus={true}
+									dataSource={sourceData}
+						  	/><br />
+							</TableRowColumn>
+							<TableRowColumn>
+							  <AutoComplete
+									filter={AutoComplete.noFilter}
+									openOnFocus={true}
+									dataSource={sourceData}
+						  	/><br />
+							</TableRowColumn>
 						</TableRow>
 					))}
 				</TableBody>
